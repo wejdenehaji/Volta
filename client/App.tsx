@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppReserve from "./pages/AppReserve";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import OtpPage from "./pages/OtpPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import TimeSlotPage from "./pages/TimeSlotPage";
 import VehiclePage from "./pages/VehiclePage";
@@ -37,15 +38,16 @@ export default function App() {
                 />
               }
             />
+            <Route path="/app/verify" element={<OtpPage />} />
             <Route
-              path="/app/verify"
+              path="/app/summary"
               element={
                 <PlaceholderPage
-                  ctaLabel="Back to vehicle check"
-                  ctaTo="/app/vehicle"
-                  description="The OTP verification step follows vehicle identification. I can generate that screen next so the reservation flow continues without gaps."
+                  ctaLabel="Back to OTP"
+                  ctaTo="/app/verify"
+                  description="The reservation summary comes after OTP verification in the PDF. I can generate that full review screen next, followed by payment and QR confirmation."
                   eyebrow="Reservation flow"
-                  title="OTP verification is next."
+                  title="Reservation summary is next."
                 />
               }
             />
