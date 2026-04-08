@@ -8,7 +8,10 @@ import AppReserve from "./pages/AppReserve";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import OtpPage from "./pages/OtpPage";
+import PaymentPage from "./pages/PaymentPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import QrConfirmationPage from "./pages/QrConfirmationPage";
+import ReservationSummaryPage from "./pages/ReservationSummaryPage";
 import TimeSlotPage from "./pages/TimeSlotPage";
 import VehiclePage from "./pages/VehiclePage";
 
@@ -39,15 +42,18 @@ export default function App() {
               }
             />
             <Route path="/app/verify" element={<OtpPage />} />
+            <Route path="/app/summary" element={<ReservationSummaryPage />} />
+            <Route path="/app/payment" element={<PaymentPage />} />
+            <Route path="/app/qr" element={<QrConfirmationPage />} />
             <Route
-              path="/app/summary"
+              path="/app/session"
               element={
                 <PlaceholderPage
-                  ctaLabel="Back to OTP"
-                  ctaTo="/app/verify"
-                  description="The reservation summary comes after OTP verification in the PDF. I can generate that full review screen next, followed by payment and QR confirmation."
-                  eyebrow="Reservation flow"
-                  title="Reservation summary is next."
+                  ctaLabel="Back to QR code"
+                  ctaTo="/app/qr"
+                  description="The live charging session comes after the QR code screen. This placeholder keeps the product flow intact until the charging screens are generated next."
+                  eyebrow="Charging session"
+                  title="Station handshake is next."
                 />
               }
             />
